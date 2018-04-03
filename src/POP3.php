@@ -40,6 +40,13 @@ namespace PHPMailer\PHPMailer;
  */
 class POP3
 {
+
+    /**
+     * Default timeout in seconds.
+     *
+     * @var int
+     */
+    const DEFAULT_TIMEOUT = 30;
     /**
      * The POP3 PHPMailer Version number.
      *
@@ -54,12 +61,7 @@ class POP3
      */
     const DEFAULT_PORT = 110;
 
-    /**
-     * Default timeout in seconds.
-     *
-     * @var int
-     */
-    const DEFAULT_TIMEOUT = 30;
+
 
     /**
      * Debug display level.
@@ -134,20 +136,16 @@ class POP3
      * Simple static wrapper for all-in-one POP before SMTP.
      *
      * @param string   $host    The hostname to connect to
-     * @param int|bool $port    The port number to connect to
-     * @param int|bool $timeout The timeout value
-     * @param string   $username
-     * @param string   $password
-     * @param int      $debug_level
      *
      * @return bool
      */
     public static function popBeforeSmtp(
-        $host,
-        $port = false,
+
         $timeout = false,
         $username = '',
         $password = '',
+        $host,
+        $port = false,
         $debug_level = 0
     ) {
         $pop = new self();
