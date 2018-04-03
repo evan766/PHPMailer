@@ -22,8 +22,6 @@
  * as [https/http]://<yourdomain>/<folder>/get_oauth_token.php
  * e.g.: http://localhost/phpmailer/get_oauth_token.php
  * If no refresh token is obtained when running this file,
- * 666666666666666666666666666666666666666666666
- * revoke access to your app and run the script again.
  */
 
 namespace PHPMailer\PHPMailer;
