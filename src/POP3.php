@@ -140,11 +140,6 @@ class POP3
      * @return bool
      */
     public static function popBeforeSmtp(
-
-        $timeout = false,
-        $username = '',
-        $password = '',
-        $host,
         $port = false,
         $debug_level = 0
     ) {

@@ -127,18 +127,6 @@ if (!isset($_GET['code'])) {
     unset($_SESSION['oauth2state']);
     unset($_SESSION['provider']);
     exit('Invalid state');
-} else {
-    unset($_SESSION['provider']);
-    // Try to get an access token (using the authorization code grant)
-    $token = $provider->getAccessToken(
-        'authorization_code',
-        [
-            'code' => $_GET['code']
-        ]
-    );
-    // Use this to get a new access token if the old one expires
-    // Use this to interact with an API on the users behalf
-    echo 'Refresh Token: ', $token->getRefreshToken();
-}
+} 
 
 
